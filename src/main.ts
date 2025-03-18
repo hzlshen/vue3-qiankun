@@ -11,7 +11,30 @@ registerMicroApps([
     entry: '//localhost:8888', // 子应用入口
     container: '#subvue-viewport', // 子应用挂载的节点
     activeRule: '/app1', // 激活规则，当路由匹配时加载子应用
-  }
-])
+  },
+],
+{
+  beforeLoad: [
+    (app)=>{
+      console.log('[LifeCycle] before load %c%s', 'color: green;', app.name);
+    },
+  ],
+  beforeMount: [
+    (app) => {
+      console.log('[LifeCycle] before mount %c%s', 'color: green;', app.name);
+    },
+  ],
+  beforeUnmount: [
+    (app) => {
+      console.log('[LifeCycle] before mount %c%s', 'color: green;', app.name);
+    }
+  ],
+  afterUnmount: [
+    (app) => {
+      console.log('[LifeCycle] after unmount %c%s', 'color: green;', app.name);
+    },
+  ]
+}
+)
 
 start()
