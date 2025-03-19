@@ -5,8 +5,9 @@ import { registerMicroApps,start } from "qiankun";
 import store from "./store/index";
 
 const app = createApp(App);
-app.mount("#app");
 app.use(store);
+
+app.mount("#app");
 
 
 registerMicroApps([
