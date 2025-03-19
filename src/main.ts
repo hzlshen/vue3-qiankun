@@ -2,8 +2,12 @@ import { createApp } from "vue";
 import "./style.css";
 import App from "./App.vue";
 import { registerMicroApps,start } from "qiankun";
+import store from "./store/index";
 
-createApp(App).mount("#app");
+const app = createApp(App);
+app.mount("#app");
+app.use(store);
+
 
 registerMicroApps([
   {
